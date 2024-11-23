@@ -41,7 +41,7 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-header text-center">
-                <h4>LOGIN</h4>
+                <h4>Selamat Datang</h4>
             </div>
             <div class="card-body">
                 <form method="POST" action="{{ route('auth.store') }}">
@@ -64,11 +64,11 @@
                             </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary w-100 mt-2">Login</button>
+                    <button type="submit" class="btn btn-dark text-white w-100 mt-2">Login</button>
                 </form>
             </div>
             <div class="card-footer text-center mb-3 mt-4 pt-3">
-               &copy; Dewata Creative | All reserved - {{\Carbon\Carbon::now()->format('Y')}}
+               &copy;All reserved - {{\Carbon\Carbon::now()->format('Y')}}
             </div>
         </div>
     </div>

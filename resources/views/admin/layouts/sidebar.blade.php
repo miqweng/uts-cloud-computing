@@ -1,9 +1,8 @@
 <div class="sidebar" data-background-color="dark">
     <div class="sidebar-logo">
         <div class="logo-header" data-background-color="dark">
-            <a href="index.html" class="logo">
-                <img src="https://geneticinktattobali.com/logo%20dewata.png" alt="navbar brand" class="navbar-brand"
-                    height="40" />
+            <a href="" class="logo text-white">
+                MY RESUME ADMIN
             </a>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">

@@ -22,10 +22,33 @@
                                 <input type="text" class="form-control mb-2" required name="title"
                                     value="{{$data->title ?? ''}}">
                             </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Category</label>
+                                        <select name="category_blog_id" id="" class="form-control">
+                                            <option value="" selected disabled> ---- Choose One ----</option>
+                                            @foreach ($category as $item)
+                                            <option value="{{$item->id}}"
+                                                {{$data != null && $data->category_blog_id == $item->id ? 'selected':''}}>
+                                                {{$item->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Secquence Blog</label>
+                                        <input type="number" class="form-control mb-2" required name="secquence_post"
+                                            value="{{$data->secquence_post ?? 1}}">
+                                    </div>
+                                </div>
 
+
+                            </div>
                             <div class="form-group">
                                 <label for="">Description</label>
-                                <textarea name="description" class="form-control" cols="30" rows="40">
+                                <textarea name="description" class="form-control" cols="30" rows="20">
                                 @php
                                 echo  $data->description ??  ''
                                 @endphp
@@ -39,22 +62,7 @@
                                 <input type="file" name="image" class="dropify"
                                     data-default-file="{{$data->image ?? ''}}" />
                             </div>
-                            <div class="form-group">
-                                <label for="">Category</label>
-                                <select name="category_blog_id" id="" class="form-control">
-                                    <option value="" selected disabled> ---- Choose One ----</option>
-                                    @foreach ($category as $item)
-                                    <option value="{{$item->id}}"
-                                        {{$data != null && $data->category_blog_id == $item->id ? 'selected':''}}>
-                                        {{$item->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Secquence Blog</label>
-                                <input type="number" class="form-control mb-2" required name="secquence_post"
-                                    value="{{$data->secquence_post ?? 1}}">
-                            </div>
+
                         </div>
                     </div>
 
@@ -72,12 +80,5 @@
 
 
 @push('script')
-<script>
-    tinymce.init({
-        selector: 'textarea',
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-    });
 
-</script>
 @endpush
