@@ -30,7 +30,7 @@ Route::middleware(['guest'])->prefix('auth')->name('auth.')->group(function () {
     });
 });
 
-Route::middleware(['auth:web'])->prefix('1secure')->name('admin.')->group(function () {
+Route::middleware(['auth:web'])->prefix('admin')->name('admin.')->group(function () {
     Route::controller(DashboardController::class)->prefix('dashboard')->name('dashboard.')->group(function () {
         Route::get('/', 'index')->name('index');
     });
